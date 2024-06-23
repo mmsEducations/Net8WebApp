@@ -1,6 +1,12 @@
+using Net8WebApp.Business;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();//1
+
+//Depenedency Injection Added 
+builder.Services.AddScoped<IStudentService, StudentService>();
+
 
 var app = builder.Build();
 
